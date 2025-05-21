@@ -1,6 +1,8 @@
 import os
 from dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify
+import os
+
 import google.generativeai as genai
 
 load_dotenv()
@@ -48,5 +50,7 @@ def chat_response():
     except Exception as e:
         return jsonify({'status': 'error', 'response': f"An error occurred: {str(e)}"})
 
+
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
