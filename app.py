@@ -13,7 +13,7 @@ genai.configure(api_key=GEMINI_API_KEY)
 app = Flask(__name__)
 
 def initialize_model():
-    model_preferences = [
+    model_preferences = [ 
         'gemini-2.0-flash',
         'gemini-2.0-flash-lite'
     ]
